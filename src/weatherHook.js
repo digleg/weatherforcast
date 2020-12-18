@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useState, useEffect } from "react";
 import { getWeatherByLocationId } from "./connector";
 
 function useWeather(location) {
   const [data, setData] = useState(null);
-
   async function reload() {
     try {
       setData(null);
@@ -12,7 +13,6 @@ function useWeather(location) {
       console.error(e);
     }
   }
-
   useEffect(() => {
     reload();
   }, []);

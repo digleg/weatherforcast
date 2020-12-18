@@ -1,4 +1,3 @@
-import { lightGreen } from "@material-ui/core/colors";
 import Axios from "axios";
 
 export const connector = Axios.create({
@@ -17,7 +16,6 @@ export const getWeatherByLocationId = async (location) => {
 
 const getLocationID = async (input) => {
   const location_info = await connector.get(`/location/search/?query=${input}`);
-  console.log("location_info:", location_info);
   let id;
   if (!location_info.data.length) {
     return null;
